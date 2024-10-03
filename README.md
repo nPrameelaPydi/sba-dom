@@ -10,7 +10,7 @@ This To-Do List app is a simple web application that allows users to manage thei
 - Mark tasks as completed and toggle their status.
 - Clear completed tasks from the list.
 - Input validation to prevent tasks from starting with special characters and ensure a minimum length.
-- Tasks are stored in the browser's local storage for persistence across sessions.
+<!--Tasks are stored in the browser's local storage for persistence across sessions.-->
 
 ## Technologies Used
 
