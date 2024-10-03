@@ -87,26 +87,26 @@ if (referrer) {
 
 
 // Function to load tasks from localStorage
-function loadTasks() {
-    const tasks = localStorage.getItem('tasks');
-    if (tasks) {
-        const taskArray = tasks.split('|'); // Use '|' as a delimiter
-        taskArray.forEach(task => {
-            if (task) { // Check if task is not empty
-                const taskElement = createTaskElement(task);
-                taskList.appendChild(taskElement);
-            }
-        });
-    }
-    updateTaskCount();
-}
+//function loadTasks() {
+//    const tasks = localStorage.getItem('tasks');
+//    if (tasks) {
+//        const taskArray = tasks.split('|'); // Use '|' as a delimiter
+//        taskArray.forEach(task => {
+//            if (task) { // Check if task is not empty
+//                const taskElement = createTaskElement(task);
+//                taskList.appendChild(taskElement);
+//            }
+//        });
+//    }
+//    updateTaskCount();
+//}
 
 // Function to save tasks to localStorage
-function saveTaskToLocalStorage(task) {
-    const currentTasks = localStorage.getItem('tasks') || '';
-    const updatedTasks = currentTasks ? `${currentTasks}|${task}` : task; // Append task with delimiter
-    localStorage.setItem('tasks', updatedTasks);
-}
+//function saveTaskToLocalStorage(task) {
+//    const currentTasks = localStorage.getItem('tasks') || '';
+//    const updatedTasks = currentTasks ? `${currentTasks}|${task}` : task; // Append task with delimiter
+//    localStorage.setItem('tasks', updatedTasks);
+//}
 
 
 
