@@ -51,6 +51,15 @@ taskInput.addEventListener('input', () => {
     }
 })
 
+//clear completed tasks
+const clearBtn = document.createElement('button');
+clearBtn.textContent = 'Clear Completed Tasks';
+clearBtn.addEventListener('click', () => {
+    const completedTasks = taskList.querySelectorAll('.completed');
+    completedTasks.forEach(task => taskList.removeChild(task));
+})
+taskForm.appendChild(clearBtn);
+clearBtn.style.marginLeft = '10px';
 
 
 
