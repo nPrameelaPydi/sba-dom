@@ -22,10 +22,10 @@ function addTask() {
 
     //complete button
     const completeBtn = document.createElement('button');
-    completeBtn.textContent = 'Completed';
+    completeBtn.textContent = 'Complete';
     completeBtn.addEventListener('click', () => {
         newLi.classList.toggle('completed');
-        completeBtn.textContent = newLi.classList.contains('completed') ? 'Add Again' : 'Completed'
+        completeBtn.textContent = newLi.classList.contains('completed') ? 'Undo' : 'Complete'
     })
 
     newLi.appendChild(completeBtn);
@@ -39,6 +39,7 @@ function addTask() {
     taskInput.value = '';
     //focus input element
     taskInput.focus();
+
 }
 
 taskForm.addEventListener('submit', addTask);
@@ -52,7 +53,7 @@ taskInput.addEventListener('input', () => {
     }
 })
 
-//regex.test(string);
+//regex.test(string);  .test() method is a built-in function of JavaScript's RegExp (regular expression) objects. It is used to check if a string matches a specific pattern defined by a regular expression. The method returns a boolean value: true if the pattern matches the string, and false otherwise.
 taskInput.addEventListener('input', () => {
     if (/^[^a-zA-Z0-9]/.test(taskInput.value.trim())) {
         taskInput.setCustomValidity('Task must not start with special characters.');
@@ -82,6 +83,29 @@ window.onload = function () {
 const referrer = window.document.referrer;
 if (referrer) {
     console.log(`User came from: ${referrer}`);
+}
+
+
+// Function to load tasks from localStorage
+function loadTasks() {
+    const tasks = localStorage.getItem('tasks');
+    if (tasks) {
+        const taskArray = tasks.split('|'); // Use '|' as a delimiter
+        taskArray.forEach(task => {
+            if (task) { // Check if task is not empty
+                const taskElement = createTaskElement(task);
+                taskList.appendChild(taskElement);
+            }
+        });
+    }
+    updateTaskCount();
+}
+
+// Function to save tasks to localStorage
+function saveTaskToLocalStorage(task) {
+    const currentTasks = localStorage.getItem('tasks') || '';
+    const updatedTasks = currentTasks ? `${currentTasks}|${task}` : task; // Append task with delimiter
+    localStorage.setItem('tasks', updatedTasks);
 }
 
 
