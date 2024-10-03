@@ -19,11 +19,18 @@ function addTask() {
     }
 
     //read and cache the input element
-    const taskInputValue = taskInput.value;
     //create li item and add the taskInputValue to it
+    const taskInputValue = taskInput.value;
     const newLi = document.createElement('li');
     newLi.textContent = taskInputValue;
 
+    const completeBtn = document.createElement('button');
+    completeBtn.textContent = 'Done';
+    completeBtn.addEventListener('click', () => {
+        newLi.classList.toggle('completed');
+        completeBtn.textContent = newLi.classList.contains('completed') ? 'Undo' : 'Done'
+    })
+    newLi.appendChild(completeBtn);
 
     //using document fragment for performance optimization
     const fragment = document.createDocumentFragment();
@@ -32,8 +39,7 @@ function addTask() {
 
 
 
-    ////append to ul
-    //taskList.appendChild(newLi);
+
     //clear input value
     taskInput.value = '';
     //focus input element
@@ -43,3 +49,5 @@ function addTask() {
 taskForm.addEventListener('submit', addTask);
 
 
+////append to ul
+//taskList.appendChild(newLi);

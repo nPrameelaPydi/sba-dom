@@ -60,3 +60,8 @@ li {
     border-bottom: 1px solid #ccc;
     font-size: 14px;
 }
+
+.completed {
+    text-decoration: line-through;
+    color: gray;
+}
