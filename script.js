@@ -52,7 +52,7 @@ taskInput.addEventListener('input', () => {
 })
 
 //clear completed tasks
-const clearBtn = document.createElement('button');
+const clearBtn = window.document.createElement('button');
 clearBtn.textContent = 'Clear Completed Tasks';
 clearBtn.addEventListener('click', () => {
     const completedTasks = taskList.querySelectorAll('.completed');
@@ -60,6 +60,20 @@ clearBtn.addEventListener('click', () => {
 })
 taskForm.appendChild(clearBtn);
 clearBtn.style.marginLeft = '10px';
+
+//BOM properties
+window.onload = function () {
+    const heading = document.querySelector('h4');
+    heading.textContent = 'Welcome to Your To-Do List!';
+};
+
+//Get the URL of the previous page that linked to your app. This can be useful for analytics or customizing the user experience
+const referrer = window.document.referrer;
+if (referrer) {
+    console.log(`User came from: ${referrer}`);
+}
+
+
 
 
 
