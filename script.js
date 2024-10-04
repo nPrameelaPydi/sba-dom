@@ -29,7 +29,6 @@ function addTask() {
         saveTasks(); //Save tasks to local storage whenever a task is completed or undone
 
     })
-
     newLi.appendChild(completeBtn);
 
     //using document fragment for performance optimization
@@ -150,25 +149,6 @@ function updateTaskCount() {
 }
 
 
-//trailwork
-//function loadTasks() {
-//    const tasks = localStorage.getItem('tasks');
-//    if (tasks) {
-//        const taskArray = tasks.split('|'); // Use '|' as a delimiter
-//        taskArray.forEach(task => {
-//            if (task) { // Check if task is not empty
-//                const taskElement = createTaskElement(task);
-//                taskList.appendChild(taskElement);
-//            }
-//        });
-//    }//
-//}
-// Function to save tasks to localStorage
-//function saveTaskToLocalStorage(task) {
-//    const currentTasks = localStorage.getItem('tasks') || '';
-//    const updatedTasks = currentTasks ? `${currentTasks}|${task}` : task; // Append task with delimiter
-//    localStorage.setItem('tasks', updatedTasks);
-//}
 //road blocker: trail to remove line-trhu on undo button
 //if (isCompleted) {
 //    newLi.style.textDecoration = 'line-through';
