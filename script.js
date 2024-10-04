@@ -87,7 +87,6 @@ function loadTasks() {
             });
             newLi.appendChild(completeBtn);
             taskList.appendChild(newLi);
-            updateTaskCount()
         });
     }
 }
