@@ -43,6 +43,8 @@ function addTask() {
     taskInput.focus();
     saveTasks();// save tasks to local storage after adding a new task
 
+    updateTaskCount();
+
 }
 
 //localStorage.setItem('username', 'JohnDoe');
@@ -117,6 +119,7 @@ clearBtn.onclick = () => {
     const completedTasks = taskList.querySelectorAll('.completed');
     completedTasks.forEach(task => taskList.removeChild(task));
     saveTasks(); //updating local storage after clearing tasks
+    updateTaskCount();
 }
 taskForm.appendChild(clearBtn);
 clearBtn.style.marginLeft = '10px';
@@ -136,6 +139,16 @@ if (referrer) {
     console.log(`User came from: ${referrer}`);
 }
 
+console.log(taskList.children.length)
+
+// Function to update the task count
+function updateTaskCount() {
+    const taskCount = taskList.children.length;
+    const h1 = document.querySelector('h1');
+    console.log(taskCount);
+    h1.textContent = `To-Do List (${taskCount} task${taskCount === 1 ? '' : 's'})`;
+}
+
 
 //trailwork
 //function loadTasks() {
@@ -148,8 +161,7 @@ if (referrer) {
 //                taskList.appendChild(taskElement);
 //            }
 //        });
-//    }
-//    updateTaskCount();
+//    }//
 //}
 // Function to save tasks to localStorage
 //function saveTaskToLocalStorage(task) {
