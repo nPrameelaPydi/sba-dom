@@ -10,7 +10,7 @@ This To-Do List app is a simple web application that allows users to manage thei
 - Mark tasks as completed and toggle their status.
 - Clear completed tasks from the list.
 - Input validation to prevent tasks from starting with special characters and ensure a minimum length.
-<!--Tasks are stored in the browser's local storage for persistence across sessions.-->
+- Tasks are stored in the browser's local storage for persistence across sessions.
 
 ## Technologies Used
 
@@ -29,6 +29,10 @@ This To-Do List app is a simple web application that allows users to manage thei
 - Click the "Completed" button next to a task to mark it as done. The button text will change to "Add Again."
 - To remove completed tasks, click the "Clear Completed Tasks" button.
 - The app will display validation messages for invalid input.
+
+##  :page_facing_up: Resources
+- [MDN - DOM](https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model)
+- [MDN - Web Storage API](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage)
 
 ## Code Structure
 - index.html: The main HTML file containing the app structure.
